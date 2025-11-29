@@ -1,3 +1,7 @@
+import cors from "cors";
+app.use(cors());
+
+
 import express from "express";
 import multer from "multer";
 import dotenv from "dotenv";
@@ -46,5 +50,5 @@ app.post("/api/analyse-image", upload.single("image"), async (req, res) => {
   }
 });
 
-// Server starten
-app.listen(3000, () => console.log("Server läuft auf http://localhost:3000"));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log("Server läuft auf Port " + PORT));
