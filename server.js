@@ -1,6 +1,4 @@
 import cors from "cors";
-app.use(cors());
-
 
 import express from "express";
 import multer from "multer";
@@ -10,6 +8,7 @@ import OpenAI from "openai";
 dotenv.config();
 const upload = multer();
 const app = express();
+app.use(cors());
 
 // Statische Dateien (Frontend)
 app.use(express.static("public"));
